@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social</title>
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="/Users/ahmed/Desktop/Website/style.css" />
+    <link rel="stylesheet" href="social.css" />
+
+    <!-- ===== Boxicons CSS ===== -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+    <!--<title>Responsive Navigation Menu Bar</title>-->
+  </head>
+  <body>
+    <nav>
+      <div class="nav-bar">
+        <i class="bx bx-menu sidebarOpen"></i>
+        <span class="logo navLogo"
+          ><a href="#"><strong>Simple</strong></a></span
+        >
+
+        <div class="menu">
+          <div class="logo-toggle">
+            <span class="logo"
+              ><a href="#"><strong>Simple</strong></a></span
+            >
+            <i class="bx bx-x siderbarClose"></i>
+          </div>
+
+          <ul class="nav-links">
+            <li><a href="/Users/ahmed/Desktop/Website/index.html">Home</a></li>
+            <li><a href="/Users/ahmed/Desktop/Website/About2/about.html">About</a></li>
+            <li><a href="/Users/ahmed/Desktop/Website/Projects/projects.html">Projects</a></li>
+            <li><a href="/Users/ahmed/Desktop/Website/Contact/contact.html">Contact</a></li>
+            <li><a href="/Users/ahmed/Desktop/Website/Social/social.html">Social</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="icons">
+        <a href="https://bit.ly/3NUG79N" class="twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://discord.gg/vsAjgdGvnv" class="discord"><i class="fab fa-discord"></i></a>
+        <a href="https://bit.ly/3alWkqm" class="git"><i class="fab fa-github"></i></a>
+        <a href="https://bit.ly/3x3MAIQ" class="yt"><i class="fab fa-youtube"></i></a>
+      </div>
+
+
+   
+
+    <script>
+      const body = document.querySelector("body"),
+        nav = document.querySelector("nav"),
+        modeToggle = document.querySelector(".dark-light"),
+        searchToggle = document.querySelector(".searchToggle"),
+        sidebarOpen = document.querySelector(".sidebarOpen"),
+        siderbarClose = document.querySelector(".siderbarClose");
+
+      let getMode = localStorage.getItem("mode");
+      if (getMode && getMode === "dark-mode") {
+        body.classList.add("dark");
+      }
+
+      sidebarOpen.addEventListener("click", () => {
+        nav.classList.add("active");
+      });
+
+      body.addEventListener("click", (e) => {
+        let clickedElm = e.target;
+
+        if (
+          !clickedElm.classList.contains("sidebarOpen") &&
+          !clickedElm.classList.contains("menu")
+        ) {
+          nav.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
